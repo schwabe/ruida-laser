@@ -11,7 +11,7 @@ def draw_char(c, startx, starty, size=5, use_asteroids=True):
         print ("'%s' not fond in font " % c)
         c = '?'
 
-    scale = 3000
+    scale = 3000.0
     ret = []
 
     cret = []
@@ -32,20 +32,20 @@ def draw_char(c, startx, starty, size=5, use_asteroids=True):
             pret.append((x,y))
 
         ret.append(pret)
-        
+
     return ret, maxx,maxy
 
-def draw_str(s, startx, starty, size=4, use_asteroids=False):
+def draw_str(s, startx, starty, size=40, use_asteroids=False):
     paths =[]
     x = startx
     for c in s:
-        cpaths, maxx, _ = draw_char(c, x, starty,size, use_asteroids=use_asteroids)
+        cpaths, maxx, _ = draw_char(c, x, starty,size=size, use_asteroids=use_asteroids)
         x = maxx + 2/size
         paths.extend(cpaths)
 
     return paths
 
-def draw_str_center(s, x, y, centery=False, centerx=False, alignright=False, size=4, use_asteroids=False):
+def draw_str_center(s, x, y, centery=False, centerx=False, alignright=False, size=5, use_asteroids=False):
     paths =[]
 
     maxx=0

@@ -22,7 +22,7 @@ def main():
     y=0
     for i in range(ord(' '), ord('z')):
         c = chr(i)
-        cpaths, maxx = fonts.draw_char(c, x, y, use_asteroids=False)
+        cpaths, maxx,maxy = fonts.draw_char(c, x, y, use_asteroids=False)
         x = maxx + 1
 
         paths.extend(cpaths)
